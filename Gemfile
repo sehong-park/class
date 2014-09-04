@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# bootstrap
+gem 'bootstrap-sass'
+
+# server..
 gem 'thin'
 gem 'connect'
 
