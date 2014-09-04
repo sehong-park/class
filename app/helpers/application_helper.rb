@@ -1,7 +1,7 @@
 module ApplicationHelper
   
-  def bs_icon(name, text)
-    "<span class='glyphicon glyphicon-#{name}'></span> #{text}".html_safe
+  def bs_icon(icon_name, text)
+    "<span class='glyphicon glyphicon-#{icon_name}'></span> #{text}".html_safe
   end
   
   def bs_badge(text)

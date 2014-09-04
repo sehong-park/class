@@ -6,3 +6,8 @@ ko:
     group: "그룹"
     study: "스터디"
     
+  user:
+    profile: "내정보"
+    setting: "환경설정"
+    signin: "접속하기"
+    signout: "나가기"
