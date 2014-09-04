@@ -1,3 +1,8 @@
 ko:
-  application:
+  app:
     title: "두드림"
+    desc: "꿈이있는 교육"
+    school: "학교"
+    group: "그룹"
+    study: "스터디"
+    
