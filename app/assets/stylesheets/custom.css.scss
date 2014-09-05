@@ -21,6 +21,11 @@ body {
 .btn {
   font-weight: bold;
 }
+
+.help-block {
+  padding: 0 13px;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5 {
   font-weight: bold;
@@ -37,8 +42,8 @@ h1, h2, h3, h4, h5 {
 
   #logo {
     font-size: 30px;
-    color: $gray-darker;
-    text-shadow: 2px 0 2px $gray-darker;
+    color: $gray-dark;
+    text-shadow: 2px 0 1px $gray-dark;
   }
 
   .nav {

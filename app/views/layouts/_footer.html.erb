@@ -21,8 +21,8 @@
         <nav class="nav">
           <p><strong><%= t 'app.contact' %></strong><p>
           <ul>
-            <li><%= link_to(bs_icon(:envelope, t('app.email')), "mailto:#{t('app.email')}") %></li>
-            <li><%= link_to(bs_icon(:phone, t('app.phone')), "tel:#{t('app.phone')}") %></li>
+            <li><%= link_to(bs_icon_with_text(:envelope, t('app.email')), "mailto:#{t('app.email')}") %></li>
+            <li><%= link_to(bs_icon_with_text(:phone, t('app.phone')), "tel:#{t('app.phone')}") %></li>
           </ul>
         </nav>
       </div>    
