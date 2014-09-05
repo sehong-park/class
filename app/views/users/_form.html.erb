@@ -1,41 +1,31 @@
 <%= form_for @user, html: { role: "form" } do |f| %>
-<% if @user.errors.any? %>
-<div id="error_explanation">
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+  <%= render 'shared/error_messages' %>
 
-<div class="form-group">
-  <%= label_tag(:user_name, t('user.name')) %>
-  <%= email_field(:user, :name, class: "form-control", placeholder: t('user.name_placeholder')) %>
-</div>
+  <div class="form-group">
+    <%= f.label(:name, t('user.name')) %>
+    <%= f.email_field(:name, class: "form-control", placeholder: t('user.name_placeholder')) %>
+  </div>
 
-<div class="form-group">
-  <%= label_tag(:user_email, t('user.email')) %>
+  <div class="form-group">
+    <%= f.label(:email, t('user.email')) %>
+    <%= f.email_field(:email, class: "form-control", placeholder: t('user.email_placeholder')) %>
+  </div>
 
-  <%= email_field(:user, :email, class: "form-control", placeholder: t('user.email_placeholder')) %>
+  <div class="form-group">
+    <%= f.label(:phone, t('user.phone')) %>
+    <%= f.telephone_field(:phone, class: "form-control", placeholder: t('user.phone_placeholder')) %>
+  </div>
 
-</div>
+  <div class="form-group">
+    <%= f.label(:password, t('user.password')) %>
+    <%= f.password_field(:password, class: "form-control", placeholder: t('user.password_placeholder')) %>
+  </div>
 
-<div class="form-group">
-  <%= label_tag(:user_phone, t('user.phone')) %>
-  <%= telephone_field(:user, :phone, class: "form-control", placeholder: t('user.phone_placeholder')) %>
-</div>
+  <div class="form-group">
+    <%= f.label(:password, t('user.password_confirm')) %>
+    <%= f.password_field(:password, class: "form-control", placeholder: t('user.password_confirm_placeholder')) %>
+  </div>
 
-<div class="form-group">
-  <%= label_tag(:user_password, t('user.password')) %>
-  <%= password_field(:user, :password, class: "form-control", placeholder: t('user.password_placeholder')) %>
-</div>
-
-<div class="form-group">
-  <%= label_tag(:user_password, t('user.password_confirm')) %>
-  <%= password_field(:user, :password, class: "form-control", placeholder: t('user.password_confirm_placeholder')) %>
-</div>
-
-<%= button_tag(bs_icon(:icon_name, t('user.submit')), class: "btn btn-primary form-control") %>
+  <%= f.button t('user.submit'), class: "btn btn-primary form-control" %>
 
 <% end %>

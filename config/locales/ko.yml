@@ -1,10 +1,17 @@
 ko:
   app:
-    title: "기초공학설계E반"
+    title: "기초공학설계"
     desc: "꿈이있는 교육"
     school: "학교"
     group: "그룹"
     study: "스터디"
+    campany: "두드림"
+    policy: "정책"
+    terms_of_service: "이용약관"
+    privacy: "개인정보"
+    contact: "연락"
+    email: "sehong.park86@gmail.com"
+    phone: "010-2006-8610"
     
   user:
     profile: "내정보"

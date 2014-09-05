@@ -18,6 +18,9 @@ body {
   font-family: 'NanumGothic', $font-family-sans-serif;
 }
 
+.btn {
+  font-weight: bold;
+}
 /* Typography */
 h1, h2, h3, h4, h5 {
   font-weight: bold;
@@ -34,8 +37,8 @@ h1, h2, h3, h4, h5 {
 
   #logo {
     font-size: 30px;
-    color: $gray;
-    text-shadow:5px 5px 8px $gray-light;
+    color: $gray-darker;
+    text-shadow: 2px 0 2px $gray-darker;
   }
 
   .nav {
@@ -54,7 +57,7 @@ h1, h2, h3, h4, h5 {
   border-top: 1px solid $gray-lighter;
   color: $gray;
   text-align: center;
-
+  
   nav {
     padding-top: 10px;
   }

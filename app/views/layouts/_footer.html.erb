@@ -2,32 +2,30 @@
   <div class="well">
     <div class="row">
       <div class="col-sm-4">
-        <%= image_tag("logo.jpg") %>
-        <p><strong>두드림에듀</strong></p>
+        <nav class="nav">
+          <p><strong><%= t 'app.campany' %></strong></p>
+        </nav>
       </div>
 
       <div class="col-sm-4">
         <nav class="nav">
-          <p><strong>정책</strong></p>
+          <p><strong><%= t 'app.policy' %></strong></p>
           <ul>
-            <li><%= link_to "이용약관", "/terms", target: "_blank" %></li>
-            <li><%= link_to "개인정보", "/privacy", target: "_blank" %></li>
+            <li><%= link_to t('app.terms_of_service'), "/terms", target: "_blank" %></li>
+            <li><%= link_to t('app.privacy'), "/privacy", target: "_blank" %></li>
           </ul>
         </nav>
       </div>
 
       <div class="col-sm-4">
         <nav class="nav">
-          <p><strong>연락</strong><p>
+          <p><strong><%= t 'app.contact' %></strong><p>
           <ul>
-            <li><%= link_to "sehong.park86@gmail.com", 'mailto:help@iambox.co.kr' %></li>
-            <li><%= link_to "010-2006-8610", 'tel:010-2006-8610' %></li>
-            <li><%= link_to "Facebook", 'https://www.facebook.com/haesamq', target: "_blank" %></li>
+            <li><%= link_to(bs_icon(:envelope, t('app.email')), "mailto:#{t('app.email')}") %></li>
+            <li><%= link_to(bs_icon(:phone, t('app.phone')), "tel:#{t('app.phone')}") %></li>
           </ul>
         </nav>
       </div>    
-
-
 
     </div>
   </div>
