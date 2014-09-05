@@ -22,16 +22,17 @@ ko:
     signout: "로그아웃"
     signup: "회원가입"
     name: "이 름"
-    name_placeholder: "이름을 입력해주세요"
+    name_placeholder: "예) 홍길동"
     email: "이메일"
-    email_placeholder: "abc@email.com"
+    email_placeholder: "예) abc@email.com"
     phone: "핸드폰"
-    phone_placeholder: "010-1234-5678"
+    phone_placeholder: "예) 010-1234-5678"
     password: "비밀번호"
-    password_placeholder: "6자리이상의 비밀번호를 입력하세요"
+    password_placeholder: "비밀번호"
     password_confirm: "비밀번호 확인"
-    password_confirm_placeholder: "비밀번호를 재입력 해주세요"
-    submit: 가입신청
+    password_confirm_placeholder: "비밀번호 재입력"
+    submit: "신청완료"
+    created: "회원가입을 축하드립니다"
 
   # activerecord
   activerecord:
@@ -54,3 +55,9 @@ ko:
             email:
               blank: "이메일을 입력해주세요"
               taken: "등록된 이메일 입니다"
+              invalid: "올바른 이메일주소가 아닙니다"
+            password:
+              blank: "비밀번호를 입력해주세요"
+              too_short: "6글자 이상 입력해주세요"
+            password_confirmation:
+              confirmation: "비밀번호가 일치하지 않습니다"

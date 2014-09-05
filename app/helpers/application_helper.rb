@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def bs_validation_message(attribute, errors)
-    "<span class='help-block text-muted'>#{errors.get(attribute)[0]}</span>".html_safe
+    "<span class='help-block text-muted'>#{errors.get(attribute).first}</span>".html_safe
   end
 
   def bs_validation(attribute, model)
@@ -29,24 +29,24 @@ module ApplicationHelper
   end
 
   def bs_icon_with_text(icon_name, text)
-    "#{bs_icon(icon_name)} #{text}".html_safe
-end
-
-def bs_badge(text)
-  "<span class='badge'>#{text}</span>".html_safe
-end
-
-def bs_label(text, type = 'default')
-  "<span class='label label-#{type}'>#{text}</span>".html_safe
-end
-
-def full_title(page_title)
-  base_title = t 'app.title'
-  if page_title.empty?
-    base_title
-  else
-    "#{base_title} | #{page_title}"
+    bs_icon(icon_name) + "#{text}".html_safe
   end
-end
+
+  def bs_badge(text)
+    "<span class='badge'>#{text}</span>".html_safe
+  end
+
+  def bs_label(text, type = 'default')
+    "<span class='label label-#{type}'>#{text}</span>".html_safe
+  end
+
+  def full_title(page_title)
+    base_title = t 'app.title'
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} | #{page_title}"
+    end
+  end
 
 end
