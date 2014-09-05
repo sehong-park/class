@@ -30,9 +30,10 @@
 </div>
 
 <div class="form-group <%= bs_validation(:password, @user) %>">
-  <%= f.label(:password_confirm, t('user.password_confirm')) %>
-  <%= f.password_field(:password_confirm, class: "form-control", placeholder: t('user.password_confirm_placeholder')) %>
-  <%= bs_validation_icon(:password, @user) %>
+  <%= f.label(:password_confirmation, t('user.password_confirm')) %>
+  <%= f.password_field(:password_confirmation, class: "form-control", placeholder: t('user.password_confirm_placeholder')) %>
+  <%= bs_validation_icon(:password_confirmation, @user) %>
+  <%= bs_validation_message(:password_confirmation, @user.errors) %>
 </div>
 
 <%= f.button t('user.submit'), class: "btn btn-primary form-control" %>
