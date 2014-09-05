@@ -1,0 +1,9 @@
+<% provide(:title, t('user.signin')) %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    
+    <h1 class="text-center"><%= t 'user.signin' %></h1>
+    <%= render 'form' %>
+    <p class="text-center help-block"><%= t 'user.first_visit?' %> <%= link_to t('user.do_signup'), signup_path %></p>
+  </div> <!-- col -->
+</div> <!-- row -->

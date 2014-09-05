@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def bs_icon_with_text(icon_name, text)
-    bs_icon(icon_name) + "#{text}".html_safe
+    bs_icon(icon_name) + " #{text}".html_safe
   end
 
   def bs_badge(text)

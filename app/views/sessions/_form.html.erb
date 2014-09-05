@@ -1,0 +1,15 @@
+<%= form_for(:session, url: sessions_path, html: { role: "form" }) do |f| %>
+
+<div class="form-group">
+  <%= f.label(:email, t('user.email')) %>
+  <%= f.email_field(:email, class: "form-control input-lg", placeholder: t('user.email_placeholder')) %>
+</div>
+
+<div class="form-group">
+  <%= f.label(:password, t('user.password')) %>
+  <%= f.password_field(:password, class: "form-control input-lg", placeholder: t('user.password_placeholder')) %>
+</div>
+
+<%= f.submit t('user.signin'), class: "btn btn-lg btn-form-control btn-primary" %>
+
+<% end %>
