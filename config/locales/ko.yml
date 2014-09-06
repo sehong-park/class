@@ -38,6 +38,8 @@ ko:
     incorrect_email: "등록된 이메일이 없습니다"
     incorrect_password: "비밀번호가 틀렸습니다"
     welcome: "로그인 되었습니다"
+    please_signin: "로그인이 필요합니다"
+    permission_denied: "권한이 없습니다"
 
   # activerecord
   activerecord:

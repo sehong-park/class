@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :owner_user, only: [:edit, :update]
+  before_action :admin_user, only: [:destroy]
 
   # GET /users
   # GET /users.json
@@ -26,14 +28,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: t('user.created') }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      sign_in @user
+      flash.now[:info] = t('user.created')
+      redirect_to @user
+    else
+      render :new
     end
   end
 
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    @user.destroy unless @user.admin?
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
@@ -62,9 +62,26 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
+    def signed_in_user
+      unless signed_in?
+        flash.now[:warning] = t 'user.please_signin'
+        redirect_to signin_path
+      end
+    end
+  
+    def owner_user
       @user = User.find(params[:id])
+      unless current_user?(@user)
+        flash.now[:danger] = t 'user.permission_denied'
+        redirect_to root_path
+      end
+    end
+  
+    def admin_user
+      unless current_user.admin?
+        flash.now[danger] = t 'user.permission denied'
+        redirect_to root_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
