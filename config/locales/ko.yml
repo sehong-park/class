@@ -40,7 +40,8 @@ ko:
     welcome: "로그인 되었습니다"
     please_signin: "로그인이 필요합니다"
     permission_denied: "권한이 없습니다"
-
+    destruction_succeed: "삭제되었습니다"
+    edit_profile: "회원정보 수정"
   # activerecord
   activerecord:
     models: 

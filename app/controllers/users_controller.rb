@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user, only: [:index, :show, :edit, :update, :destroy]
   before_action :owner_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
+  def show    
   end
 
   # GET /users/new
@@ -55,16 +56,20 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy unless @user.admin?
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    
+    flash[:notice] = t 'user.destruction_succeed'
+    redirect_to users_url
   end
 
   private
+  
+    def set_user
+      @user = User.find(params[:id])
+    end
+  
     def signed_in_user
       unless signed_in?
-        flash.now[:warning] = t 'user.please_signin'
+        flash[:warning] = t 'user.please_signin'
         redirect_to signin_path
       end
     end
@@ -72,14 +77,14 @@ class UsersController < ApplicationController
     def owner_user
       @user = User.find(params[:id])
       unless current_user?(@user)
-        flash.now[:danger] = t 'user.permission_denied'
+        flash[:danger] = t 'user.permission_denied'
         redirect_to root_path
       end
     end
   
     def admin_user
       unless current_user.admin?
-        flash.now[danger] = t 'user.permission denied'
+        flash[:danger] = t 'user.permission_denied'
         redirect_to root_path
       end
     end
