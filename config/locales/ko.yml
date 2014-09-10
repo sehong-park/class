@@ -42,6 +42,7 @@ ko:
     permission_denied: "권한이 없습니다"
     destruction_succeed: "삭제되었습니다"
     edit_profile: "회원정보 수정"
+
   # activerecord
   activerecord:
     models: 
