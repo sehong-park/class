@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   
+  # ASSOSIATION
+  belongs_to :team
+  
+  # DEFAULT_SCOPE
+  default_scope -> { order('created_at DESC') }
+  
   #validation
   validates :name, presence: true, length: { minimum: 2, maximum: 50 }
   

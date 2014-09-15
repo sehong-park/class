@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# faker for sample users
+gem 'faker'
+
 # bootstrap
 gem 'bootstrap-sass'
 
