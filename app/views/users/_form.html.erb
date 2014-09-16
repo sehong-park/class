@@ -14,6 +14,13 @@
   <%= bs_validation_message(:email, @user.errors) %>
 </div>
 
+<div class="form-group <%= bs_validation(:std_num, @user) %>">
+  <%= f.label(:std_num, t('user.student.std_num')) %>
+  <%= f.number_field(:std_num, class: "form-control input-lg", placeholder: t('user.student.std_num')) %>
+  <%= bs_validation_icon(:std_num, @user) %>
+  <%= bs_validation_message(:std_num, @user.errors) %>
+</div>
+
 <div class="form-group <%= bs_validation(:phone, @user) %>">
   <%= f.label(:phone, t('user.phone')) %>
   <%= f.telephone_field(:phone, class: "form-control input-lg", placeholder: t('user.phone_placeholder')) %>

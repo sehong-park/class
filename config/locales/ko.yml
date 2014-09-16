@@ -44,7 +44,10 @@ ko:
     permission_denied: "권한이 없습니다"
     destruction_succeed: "삭제되었습니다"
     edit_profile: "회원정보 수정"
+    student:
+      std_num: "학번"
 
+    
   # activerecord
   activerecord:
     models: 
