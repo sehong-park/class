@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   resources :users
+  resources :teams
   resources :sessions, only: [:new, :create, :destroy]
+  
+  match 'team/pickup', to: 'team/pickup', via: 'get'
   
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

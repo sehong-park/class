@@ -1,0 +1,19 @@
+<h1>Listing teams</h1>
+<%= link_to "조편성", 'team/pickup', class: 'btn btn-lg btn-primary' %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="4">Members</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+    <tr>
+      <td><%= team.name %></td>
+      <td colspan="4"></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
