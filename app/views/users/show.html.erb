@@ -10,10 +10,12 @@
   <%= @user.email %>
 </p>
 
+<% if admin_user? %>
 <p>
   <strong><%= t 'user.phone' %>:</strong>
   <%= @user.phone %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

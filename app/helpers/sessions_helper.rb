@@ -1,4 +1,8 @@
 module SessionsHelper
+  
+  def admin_user?
+    current_user && current_user.admin?
+  end
 
   def sign_in(user)
     remember_token = User.new_remember_token
