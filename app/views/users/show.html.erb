@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong><%= t 'user.student.std_num' %>:</strong>
+  <%= @user.std_num %>
+</p>
+
+<p>
   <strong><%= t 'user.name' %>:</strong>
   <%= @user.name %>
 </p>
@@ -10,7 +15,7 @@
   <%= @user.email %>
 </p>
 
-<% if admin_user? %>
+<% if current_user?(@user) || admin_user? %>
 <p>
   <strong><%= t 'user.phone' %>:</strong>
   <%= @user.phone %>

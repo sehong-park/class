@@ -1,5 +1,7 @@
+<%= @users.count %>
+<%= @pickup_user.name if defined? @pickup_user %>
 <h1>Listing teams</h1>
-<%= link_to "조편성", 'team/pickup', class: 'btn btn-lg btn-primary' %>
+<%= link_to "조편성", '/teambuilding', class: 'btn btn-lg btn-primary' %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -12,7 +14,11 @@
     <% @teams.each do |team| %>
     <tr>
       <td><%= team.name %></td>
-      <td colspan="4"></td>
+      <td colspan="4">
+        <% team.users.each do |member| %>
+          <%= member.name %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

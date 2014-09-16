@@ -70,6 +70,9 @@ ko:
               blank: "이메일을 입력해주세요"
               taken: "등록된 이메일 입니다"
               invalid: "올바른 이메일주소가 아닙니다"
+            std_num:
+              blank: "학번을 입력해주세요"
+              taken: "이미 등록된 학번 입니다"
             password:
               blank: "비밀번호를 입력해주세요"
               too_short: "6글자 이상 입력해주세요"
