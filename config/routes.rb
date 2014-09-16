@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :teams
   resources :sessions, only: [:new, :create, :destroy]
   
-  match 'team/pickup', to: 'team/pickup', via: 'get'
+  match 'team/pickup', to: 'team#pickup', via: 'get'
   
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
