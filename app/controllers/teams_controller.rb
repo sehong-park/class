@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :admin_user, only: [:edit, :update, :pickup, :destroy]
   
   def index
     @users = User.where(team_id: nil)
