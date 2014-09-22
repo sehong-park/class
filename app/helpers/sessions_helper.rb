@@ -1,5 +1,9 @@
 module SessionsHelper
   
+  def admin_user
+    redirect_to(root_url) unless admin_user?
+  end
+  
   def admin_user?
     current_user && current_user.admin?
   end

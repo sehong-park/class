@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   
   match '/teambuilding', to: 'teams#pickup', via: 'get'
+  match '/teamreset', to: 'teams#reset', via: 'get'
   
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
