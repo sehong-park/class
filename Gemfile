@@ -11,7 +11,7 @@ gem 'thin'
 gem 'connect'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.6'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -55,4 +55,3 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
