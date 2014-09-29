@@ -1,11 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-@font-face {
-  font-family:'NanumGothic';
-  font-weight: normal;
-  font-style: normal;
-}
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* universal */
 html {
@@ -13,7 +8,7 @@ html {
 }
 
 body {
-  font-family: 'NanumGothic', $font-family-sans-serif;
+  font-family: 'Nanum Gothic', $font-family-sans-serif;
 }
 
 .btn {
