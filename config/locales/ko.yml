@@ -5,7 +5,7 @@ ko:
     desc: "창의공학"
     school: "학교"
     group: "그룹"
-    study: "스터디"
+    course: "공부"
     team: "팀"
     member: "회원"
     campany: "두드림"
@@ -16,6 +16,9 @@ ko:
     email: "sehong.park86@gmail.com"
     phone: "010-2006-8610"
 
+  # course
+  course:
+    list: '공부 목록'
   # user
   user:
     profile: "내정보"

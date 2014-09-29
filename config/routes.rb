@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :courses
+
   root 'welcome#index'
   
-  resources :users
   resources :teams
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
   
-  match '/teambuilding', to: 'teams#pickup', via: 'get'
-  match '/teamreset', to: 'teams#reset', via: 'get'
+  
+  #match '/teambuilding', to: 'teams#pickup', via: 'get'
+  #match '/teamreset', to: 'teams#reset', via: 'get'
   
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

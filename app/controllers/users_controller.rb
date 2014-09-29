@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :not_login_user, only: [:new]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user, only: [:index, :show, :edit, :update, :destroy]
   before_action :owner_user, only: [:edit, :update]
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy unless @user.admin?
     
-    flash[:notice] = t 'user.destruction_succeed'
+    flash[:danger] = t 'user.destruction_succeed'
     redirect_to users_url
   end
 

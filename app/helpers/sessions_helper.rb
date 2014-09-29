@@ -1,6 +1,12 @@
 module SessionsHelper
   
+  def not_login_user
+    flash[:danger] = t 'user.permission_denied'
+    redirect_to(root_url) if signed_in?
+  end
+  
   def admin_user
+    flash[:danger] = t 'user.permission_denied'
     redirect_to(root_url) unless admin_user?
   end
   
