@@ -5,7 +5,7 @@
   <% @courses.each do |course| %>
   <div class="col-xs-6 col-sm-4 col-md-3">
     <div class="thumbnail">
-      <%= image_tag("dummy_200x200.png") %>
+      <%= image_tag("dummy_200x200.png", alt: "arduino") %>
       <div class="caption">
         <h3><%= course.name %></h3>
         <p><%= truncate('아두이노는 오픈소스 마이크로컨트롤러 보드이다. 임베디드 개발 경험이 전혀 없는 사람을 위해 개발된 교육용 플랫폼이기 때문에 프로그램을 작성하고 보드에 프로그램을 올리는 과정을 단순화하여 다루기 쉽게 되어 있다.', length: 120) %></p>
