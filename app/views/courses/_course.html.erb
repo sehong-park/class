@@ -6,9 +6,9 @@
       <p class="description"><%= course.description %></p>
       <% if admin_user? %>
       <p>
-        <%= link_to 'Edit', edit_course_path(course), class: 'btn btn-primary' %>
+        <%= link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-primary' %>
         <%= link_to 'Destroy', course, method: :delete,
-data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
       </p>
       <% end %>
     </div>
