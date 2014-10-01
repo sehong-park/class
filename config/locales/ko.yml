@@ -34,7 +34,7 @@ ko:
     signin: "로그인"
     signout: "로그아웃"
     signup: "회원가입"
-    edit: "회원정보 수정"
+    edit: "내정보 수정"
     name: "이 름"
     name_placeholder: "예) 홍길동"
     email: "이메일"
