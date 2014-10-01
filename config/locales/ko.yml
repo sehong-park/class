@@ -15,6 +15,8 @@ ko:
     contact: "연락"
     email: "sehong.park86@gmail.com"
     phone: "010-2006-8610"
+    edit: "수정"
+    destroy: "삭제"
 
   # course
   course:
