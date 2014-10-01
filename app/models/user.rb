@@ -18,6 +18,16 @@ class User < ActiveRecord::Base
   
   validates :std_num, presence: true
   
+  # image validation
+  DEFAULT_AVATAR = "dummy/user_80x80.png"
+  has_attached_file :avatar, styles: { medium: "160x160>", thumb: "80x80>" },
+                             default_url: DEFAULT_AVATAR
+  
+  validates_attachment :avatar, presence: true,
+                               content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
+                               size: { :in => 0..100.kilobytes }
+
+  
   has_secure_password
   validates :password, length: { minimum: 6 }, on: :create
   

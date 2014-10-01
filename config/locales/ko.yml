@@ -7,7 +7,7 @@ ko:
     group: "그룹"
     course: "학습"
     team: "팀"
-    member: "회원"
+    user: "회원"
     campany: "두드림"
     policy: "정책"
     terms_of_service: "이용약관"
@@ -19,8 +19,8 @@ ko:
   # course
   course:
     list: '학습 목록'
-    new: '학습주제 만들기'
-    edit: '학습주제 수정하기'
+    new: '학습주제 생성'
+    edit: '학습주제 수정'
     placeholder:
       name: '학습 주제를 입력하세요 ex) Arduino'
       description: '120 자 내외의 간단한 설명을 적어주세요'
@@ -28,11 +28,13 @@ ko:
     
   # user
   user:
+    list: '회원 목록'
     profile: "내정보"
     setting: "환경설정"
     signin: "로그인"
     signout: "로그아웃"
     signup: "회원가입"
+    edit: "회원정보 수정"
     name: "이 름"
     name_placeholder: "예) 홍길동"
     email: "이메일"
@@ -68,6 +70,8 @@ ko:
         name: "이름"
         email: "이메일"
         phone: "연락처"
+        std_num: "학번"
+        avatar: "사진"
         password: "비밀번호"
       course:
         name: "이름"

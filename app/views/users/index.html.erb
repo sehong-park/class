@@ -1,40 +1,6 @@
-<% provide(:title, t('app.desc')) %>
-<h1>Listing users</h1>
+<% provide(:title, t('app.user')) %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>StdNum</th>
-      <th>Name</th>
-      <th>Email</th>
-      <% if current_user.admin? %>
-      <th>Phone</th>
-      <% end %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <td><%= user.std_num %></td>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <% if current_user.admin? %>
-      <td><%= user.phone %></td>
-      <% end %>
-      <td><%= link_to 'Show', user %></td>
-      <% if current_user?(user) %>
-      <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      <% end %>
-      <% if current_user.admin? %>
-      <td><%= link_to 'Destroy', user, method: :delete,
-  data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'users/users', { users: @users } %>
 
 <% unless signed_in? %>
 <%= link_to 'New User', new_user_path %>

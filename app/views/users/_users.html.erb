@@ -1,0 +1,6 @@
+<h1><%= t('user.list') %></h1>
+<div class="row" id="users">
+  <% users.each do |user| %>
+    <%= render 'users/user', {user: user} %>
+  <% end %>
+</div> <!-- users -->

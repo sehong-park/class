@@ -9,7 +9,7 @@
 
   <div class="form-group <%= bs_validation(:description, @course) %>">
     <%= f.label(:description, t('activerecord.attributes.course.description')) %>
-    <%= f.text_area(:description, class: "form-control input-lg", placeholder: t('course.placeholder.description')) %>
+    <%= f.text_area(:description, rows: 3, class: "form-control input-lg", placeholder: t('course.placeholder.description')) %>
     <%= bs_validation_icon(:description, @course) %>
     <%= bs_validation_message(:description, @course.errors) %>
   </div>
@@ -17,7 +17,7 @@
   <div class="form-group <%= bs_validation(:image, @course) %>">
     <%= f.label(:image, t('activerecord.attributes.course.image')) %>
     <%= f.file_field :image %>
-    <% unless @course.image.url.include?('dummy/200x200.png') %>
+    <% unless @course.image.url.include?(Course::DEFAULT_IMAGE) %>
       <%= image_tag(@course.image.url, alt: @course.name) %>
     <% end %>
     <%= bs_validation_icon(:image, @course) %>

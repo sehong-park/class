@@ -28,6 +28,16 @@
   <%= bs_validation_message(:phone, @user.errors) %>
 </div>
 
+<div class="form-group <%= bs_validation(:avatar, @course) %>">
+  <%= f.label(:avatar, t('activerecord.attributes.user.avatar')) %>
+  <%= f.file_field :avatar %>
+  <% unless @user.image.url.include?(User::DEFAULT_AVATAR) %>
+    <%= image_tag(@user.image.url, alt: @user.name) %>
+  <% end %>
+  <%= bs_validation_icon(:image, @course) %>
+  <%= bs_validation_message(:image, @course.errors) %>
+</div>
+
 <div class="form-group <%= bs_validation(:password, @user) %>">
   <%= f.label(:password, t('user.password')) %>
   <%= f.password_field(:password, class: "form-control input-lg", placeholder: t('user.password_placeholder')) %>
