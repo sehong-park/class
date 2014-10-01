@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :not_login_user, only: [:new]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :destroy]
   before_action :owner_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in @user
-      flash.now[:info] = t('user.created')
+      flash[:success] = t('user.created')
       redirect_to @user
     else
       render :new
@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        flash[:success] = t('user.updated')
+        format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

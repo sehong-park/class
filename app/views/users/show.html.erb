@@ -1,26 +1,7 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @user.name) %>
 
-<p>
-  <strong><%= t 'user.student.std_num' %>:</strong>
-  <%= @user.std_num %>
-</p>
+<div class="row">
+  <%= render 'users/user', {user: @user} %>
+</div>
 
-<p>
-  <strong><%= t 'user.name' %>:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong><%= t 'user.email' %>:</strong>
-  <%= @user.email %>
-</p>
-
-<% if current_user?(@user) || admin_user? %>
-<p>
-  <strong><%= t 'user.phone' %>:</strong>
-  <%= @user.phone %>
-</p>
-<% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', courses_path %>
