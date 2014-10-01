@@ -17,7 +17,7 @@
   <div class="form-group <%= bs_validation(:image, @course) %>">
     <%= f.label(:image, t('activerecord.attributes.course.image')) %>
     <%= f.file_field :image %>
-    <% if defined? @course.image.url %>
+    <% unless @course.image.url.include?('dummy/200x200.png') %>
       <%= image_tag(@course.image.url, alt: @course.name) %>
     <% end %>
     <%= bs_validation_icon(:image, @course) %>

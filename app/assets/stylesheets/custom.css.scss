@@ -29,10 +29,20 @@ body {
   height: 46px;
   line-height: 46px;
 }
+
 /* Typography */
 h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
+
+/* Truncated */
+@mixin truncated($max-line) {
+  width: 100%;
+  height: $line-height-computed * $max-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* layouts */
 #header {
   font-weight: bold;
@@ -82,5 +92,17 @@ h1, h2, h3, h4, h5 {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+}
+
+/* Courses */
+#courses {
+  .caption {
+    .description {
+      @include truncated(7);
+      &:after {
+        content: "\02026";
+      }
+    }
   }
 }
