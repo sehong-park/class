@@ -1,6 +1,11 @@
-<h1>Editing course</h1>
+<% provide(:title, t('app.course')) %>
 
-<%= render 'form' %>
+<div class="row">
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+  <div class="col-sm-8 col-sm-offset-2">
+    
+    <h1 class="text-center"><%= t 'course.edit' %></h1>
+    <%= render 'form' %>
+    
+  </div> <!-- col -->
+</div> <!-- row -->

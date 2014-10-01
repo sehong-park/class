@@ -1,0 +1,6 @@
+<h1><%= t('course.list') %></h1>
+<div class="row" id="courses">
+  <% courses.each do |course| %>
+    <%= render 'courses/course', {course: course} %>
+  <% end %>
+</div> <!-- courses -->

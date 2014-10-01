@@ -100,9 +100,6 @@ h1, h2, h3, h4, h5 {
   .caption {
     .description {
       @include truncated(7);
-      &:after {
-        content: "\02026";
-      }
     }
   }
 }

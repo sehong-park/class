@@ -20,6 +20,7 @@ ko:
   course:
     list: '학습 목록'
     new: '학습주제 만들기'
+    edit: '학습주제 수정하기'
     placeholder:
       name: '학습 주제를 입력하세요 ex) Arduino'
       description: '120 자 내외의 간단한 설명을 적어주세요'
