@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# paperclip for image upload
+gem "paperclip", "~> 4.2"
+
 # faker for sample users
 gem 'faker'
 

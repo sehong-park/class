@@ -5,7 +5,7 @@ ko:
     desc: "창의공학"
     school: "학교"
     group: "그룹"
-    course: "공부"
+    course: "학습"
     team: "팀"
     member: "회원"
     campany: "두드림"
@@ -18,7 +18,13 @@ ko:
 
   # course
   course:
-    list: '공부 목록'
+    list: '학습 목록'
+    new: '학습주제 만들기'
+    placeholder:
+      name: '학습 주제를 입력하세요 ex) Arduino'
+      description: '120 자 내외의 간단한 설명을 적어주세요'
+    submit: '작성완료'
+    
   # user
   user:
     profile: "내정보"
@@ -55,12 +61,17 @@ ko:
   activerecord:
     models: 
       user: "회원"
+      course: "학습"
     attributes:
       user:
         name: "이름"
         email: "이메일"
         phone: "연락처"
         password: "비밀번호"
+      course:
+        name: "이름"
+        description: "설명"
+        image: "이미지"
     errors:
       models:
         user:
@@ -81,3 +92,13 @@ ko:
               too_short: "6글자 이상 입력해주세요"
             password_confirmation:
               confirmation: "비밀번호가 일치하지 않습니다"
+        course:
+          attributes:
+            name:
+              blank: "학습주제를 입력해주세요"
+            description:
+              blank: "학습주제에 대한 설명을 입력해주세요"
+              too_long: "250자 미만으로 적어주세요"
+            image:
+              blank: "이미지 파일을 선택해주세요"
+              in_between: "100KB 이하의 파일을 올려주세요"

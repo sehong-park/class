@@ -1,6 +1,24 @@
 <% provide(:title, t('app.course')) %>
-<h1>New course</h1>
+
+<div class="row">
+
+  <div class="col-sm-6 col-sm-offset-3">
+    
+    <h1 class="text-center"><%= t 'course.new' %></h1>
+    <%= render 'form' %>
+    
+  </div> <!-- col -->
+</div> <!-- row -->
 
 <%= render 'form' %>
 
 <%= link_to 'Back', courses_path %>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    
+    <h1 class="text-center"><%= t 'user.signup' %></h1>
+    <%= render 'form' %>
+    
+  </div> <!-- col -->
+</div> <!-- row -->

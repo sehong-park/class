@@ -1,7 +1,22 @@
 <% provide(:title, @course.name) %>
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-4 col-md-3">
+    <div class="thumbnail">
+      <%= image_tag(@course.image.url(:medium), alt: @course.name) %>
+      <div class="caption">
+        <h3><%= @course.name %></h3>
+        <p><%= @course.description %></p>
+        <% if admin_user? %>
+        <p>
+          <%= link_to 'Edit', edit_course_path(@course), class: 'btn btn-primary' %>
+          <%= link_to 'Destroy', @course, method: :delete,
+data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'New Lecture', '#' %>

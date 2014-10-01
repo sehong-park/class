@@ -17,3 +17,6 @@
 
 # Secretes..
 /config/*.yml
+
+# uploading images
+/public/system

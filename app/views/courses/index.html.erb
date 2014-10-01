@@ -5,15 +5,15 @@
   <% @courses.each do |course| %>
   <div class="col-xs-6 col-sm-4 col-md-3">
     <div class="thumbnail">
-      <%= image_tag("dummy_200x200.png", alt: "arduino") %>
+      <%= image_tag(course.image.url(:medium), alt: course.name) %>
       <div class="caption">
         <h3><%= course.name %></h3>
-        <p><%= truncate('아두이노는 오픈소스 마이크로컨트롤러 보드이다. 임베디드 개발 경험이 전혀 없는 사람을 위해 개발된 교육용 플랫폼이기 때문에 프로그램을 작성하고 보드에 프로그램을 올리는 과정을 단순화하여 다루기 쉽게 되어 있다.', length: 120) %></p>
+        <p><%= course.description %></p>
         <% if admin_user? %>
         <p>
-          <%= link_to 'Edit', edit_course_path(course) %>
+          <%= link_to 'Edit', edit_course_path(course), class: 'btn btn-primary' %>
           <%= link_to 'Destroy', course, method: :delete,
-  data: { confirm: 'Are you sure?' } %>
+  data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </p>
         <% end %>
       </div>
@@ -21,32 +21,6 @@
   </div>
   <% end %>
 </div>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @courses.each do |course| %>
-    <tr>
-      <td><%= course.name %></td>
-      <td><%= link_to 'Show', course %></td>
-      <% if admin_user? %>
-      <td><%= link_to 'Edit', edit_course_path(course) %></td>
-      <% end %>
-      <% if admin_user? %>
-      <td><%= link_to 'Destroy', course, method: :delete,
-  data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-  
-</table>
 
 <% if admin_user? %>
   <%= link_to 'New Course', new_course_path %>
