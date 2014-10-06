@@ -9,9 +9,7 @@
 
   <!-- content -->
   <div class="col-sm-8">
-    <%= render 'lectures/lectures' %>
+    <%= render 'lectures/lectures', {lectures: @lectures} %>
   </div>
 
 </div>
-
-<%= link_to 'Back', courses_path %>

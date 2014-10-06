@@ -7,6 +7,17 @@
 
     <!-- media list -->
     <ul class="media-list">
+      <% lectures.each do |lecture| %>
+        <li class="media">
+        <a class="pull-left" href="#">
+          <%= image_tag("dummy/user_80x80.png") %>
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to lecture.name, lecture_path(lecture) %></h4>
+          <p><%= lecture.description %></p>
+        </div>
+      </li>
+      <% end %>
       <li class="media">
         <a class="pull-left" href="#">
           <%= image_tag("dummy/user_80x80.png") %>
