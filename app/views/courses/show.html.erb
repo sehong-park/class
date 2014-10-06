@@ -1,7 +1,17 @@
 <% provide(:title, @course.name) %>
 
 <div class="row">
-  <%= render 'courses/course', {course: @course} %>
+
+  <!-- aside -->
+  <aside>
+    <%= render 'courses/course', {course: @course} %>
+  </aside>
+
+  <!-- content -->
+  <div class="col-sm-8">
+    <%= render 'lectures/lectures' %>
+  </div>
+
 </div>
 
 <%= link_to 'Back', courses_path %>
