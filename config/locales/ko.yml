@@ -126,6 +126,7 @@ ko:
     desc: "창의공학"
     school: "학교"
     group: "그룹"
+    teaching_material: "교재"
     lecture: "강의"
     course: "학습"
     team: "팀"
@@ -142,7 +143,15 @@ ko:
     
   form:
     submit: "작성완료"
-
+    placeholder:
+      name: "%{model} 이름을 입력해주세요"
+      description: "%{model}에 대한 간단한 설명을 적어주세요"
+      link: "%{model}에 대해 참고 할 수 있는 url 링크를 남겨주세요"
+  
+  teaching_material:
+    list: "교재 목록"
+    
+  
   # course
   course:
     list: '학습 목록'
@@ -195,14 +204,19 @@ ko:
     student:
       std_num: "학번"
 
-    
   # activerecord
   activerecord:
     models: 
       user: "회원"
       course: "학습"
       lecture: "강좌"
+      teaching_material: "교재"
     attributes:
+      teaching_material:
+        name: "교재명"
+        description: "설명"
+        link: "링크"
+        image: "이미지"
       user:
         name: "이름"
         email: "이메일"
@@ -220,6 +234,8 @@ ko:
         image: "이미지"
         start_date: "시작일"
         end_date: "종료일"
+        level: "난이도"
+        levels: [[입문, 0], [초급, 1], [중급,2], [고급,3], [마스터,4]]
     errors:
       models:
         user:
@@ -255,6 +271,19 @@ ko:
             name:
               blank: "강의명을 입력해주세요"
             description:
+              blank: "강의에 대한 설명을 입력해주세요"
+              too_long: "250자 미만으로 적어주세요"
+            image:
+              blank: "이미지 파일을 선택해주세요"
+              in_between: "100KB 이하의 파일을 올려주세요"
+        teaching_material:
+          attributes:
+            name:
+              blank: "강의명을 입력해주세요"
+            description:
+              blank: "강의에 대한 설명을 입력해주세요"
+              too_long: "250자 미만으로 적어주세요"
+            link:
               blank: "강의에 대한 설명을 입력해주세요"
               too_long: "250자 미만으로 적어주세요"
             image:

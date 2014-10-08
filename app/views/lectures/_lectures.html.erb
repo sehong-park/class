@@ -17,10 +17,14 @@
         <% lectures.each do |lecture| %>
         <li class="media lectures">
           <a class="pull-left" href="<%= lecture_path(lecture) %>">
-            <%= image_tag(lecture.image.url(:thumb), alt: lecture.name) %>
+            <%= image_tag(lecture.image.url(:medium), alt: lecture.name) %>
           </a>
           <div class="media-body">
             <h4 class="media-heading"><%= link_to lecture.name, lecture_path(lecture) %></h4>
+            <p class="level text-muted">
+              <%= t('activerecord.attributes.lecture.level') %> :
+              <%= t('activerecord.attributes.lecture.levels').at(lecture.level).at(0) %>
+            </p>
             <p class="description"><%= lecture.description %></p>
           </div>
         </li>

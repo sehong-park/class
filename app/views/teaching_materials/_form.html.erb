@@ -1,0 +1,37 @@
+<%= form_for(@teaching_material) do |f| %>
+
+<div class="form-group <%= bs_validation(:name, @teaching_material) %>">
+  <%= f.label(:name, t('activerecord.attributes.teaching_material.name')) %>
+  <%= f.text_field(:name, class: "form-control input-lg", placeholder: t('form.placeholder.name', model: t('activerecord.models.teaching_material'))) %>
+  <%= bs_validation_icon(:name, @teaching_material) %>
+  <%= bs_validation_message(:name, @teaching_material.errors) %>
+</div>
+
+<div class="form-group <%= bs_validation(:description, @teaching_material) %>">
+  <%= f.label(:description, t('activerecord.attributes.teaching_material.description')) %>
+  <%= f.text_area(:description, rows: 3, class: "form-control input-lg", placeholder: t('form.placeholder.description', model: t('activerecord.models.teaching_material'))) %>
+  <%= bs_validation_icon(:description, @teaching_material) %>
+  <%= bs_validation_message(:description, @teaching_material.errors) %>
+</div>
+
+<div class="form-group <%= bs_validation(:link, @teaching_material) %>">
+  <%= f.label(:link, t('activerecord.attributes.teaching_material.link')) %>
+  <%= f.text_field(:link, class: "form-control input-lg", placeholder: t('form.placeholder.link', model: t('activerecord.models.teaching_material'))) %>
+  <%= bs_validation_icon(:link, @teaching_material) %>
+  <%= bs_validation_message(:link, @teaching_material.errors) %>
+</div>
+
+<div class="form-group <%= bs_validation(:image, @teaching_material) %>">
+  <%= f.label(:image, t('activerecord.attributes.teaching_material.image')) %>
+  <%= f.file_field :image %>
+  <% unless @teaching_material.image.url.include?(Lecture::DEFAULT_IMAGE) %>
+  <%= image_tag(@teaching_material.image.url, alt: @teaching_material.name) %>
+  <% end %>
+  <%= bs_validation_icon(:image, @teaching_material) %>
+  <%= bs_validation_message(:image, @teaching_material.errors) %>
+</div>
+
+<div class="actions">
+  <%= f.submit t('form.submit'), class: "btn btn-lg btn-form-control btn-primary" %>
+</div>
+<% end %>

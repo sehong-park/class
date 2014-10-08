@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :teaching_materials
+
   resources :organizations
 
   resources :lectures

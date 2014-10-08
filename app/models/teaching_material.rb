@@ -1,7 +1,4 @@
-class Lecture < ActiveRecord::Base
-
-  # association
-  belongs_to :course
+class TeachingMaterial < ActiveRecord::Base
   
   # name validation
   validates :name, presence: true,
@@ -11,10 +8,9 @@ class Lecture < ActiveRecord::Base
   validates :description, presence: true,
                           length: { maximum: 250 }
   
-  # level(0...4) validation 
-  validates :level, presence: true,
-                    numericality: true,
-                    inclusion: { in: 0..4 } # 0: beginner .. 5: master
+  # link validation
+  validate :link, presence: true,
+                  length: { maximum: 250 }
   
   # image validation
   DEFAULT_IMAGE = "dummy/160x160.png"
@@ -25,12 +21,5 @@ class Lecture < ActiveRecord::Base
                                content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
                                size: { :in => 0..100.kilobytes }
   
-  # course_id validation
-  validates :course_id, presence: true,
-                        numericality: true
-  
-  # instructor valditation
-  validates :instructor, presence: true,
-                         numericality: true
   
 end

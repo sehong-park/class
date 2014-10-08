@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
-  before_action :admin_user, only: [:edit, :update, :pickup, :reset, :destroy]
-
+  before_action :admin_user, except: [:index, :show]
+  
   def index
     @users = User.where({team_id: nil, admin: false})
     @teams = Team.all

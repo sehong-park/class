@@ -1,0 +1,8 @@
+<h1><%= t('teaching_material.list') %></h1>
+<div class="row" id="teaching_materials">
+  <% teaching_materials.each do |teaching_material| %>
+    <div class="col-sm-4 col-lg-3">
+      <%= render 'teaching_materials/teaching_material', {teaching_material: teaching_material} %>
+    </div>
+  <% end %>
+</div> <!-- courses -->

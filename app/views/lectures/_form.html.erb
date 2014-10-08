@@ -7,6 +7,13 @@
   <%= bs_validation_message(:name, @lecture.errors) %>
 </div>
 
+<div class="form-group <%= bs_validation(:level, @lecture) %>">
+  <%= f.label(:level, t('activerecord.attributes.lecture.level')) %>
+  <%= f.select(:level, t('activerecord.attributes.lecture.levels'), {}, {class: "form-control input-lg"}) %>
+  <%= bs_validation_icon(:level, @lecture) %>
+  <%= bs_validation_message(:level, @lecture.errors) %>
+</div>
+
 <div class="form-group <%= bs_validation(:description, @lecture) %>">
   <%= f.label(:description, t('activerecord.attributes.lecture.description')) %>
   <%= f.text_area(:description, rows: 3, class: "form-control input-lg", placeholder: t('lecture.placeholder.description')) %>

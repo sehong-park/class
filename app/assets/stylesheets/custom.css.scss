@@ -98,8 +98,25 @@ h1, h2, h3, h4, h5 {
 
 /* Lectures */
 .lectures {
+  padding-bottom: 16px;
+  border-bottom: solid 1px $gray-lighter;
+  margin-bottom: 20px;
   .description {
     @include truncated(5);
+  }
+}
+
+/* Teaching Materials */
+.teaching-material {
+  .thumbnail {
+    img {
+      height: 200px;
+    }
+    .caption {
+      .description {
+        @include truncated(3);
+      }
+    }
   }
 }
 
@@ -110,16 +127,16 @@ h1, h2, h3, h4, h5 {
       height: 200px;
     }
     .caption {
-    .description {
-      @include truncated(7);
+      .description {
+
+      }
     }
-  }
   }
 }
 
 /* Users */
 .user {
   .caption-body {
-    
+
   }
 }

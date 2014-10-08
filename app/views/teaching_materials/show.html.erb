@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @teaching_material.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @teaching_material.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @teaching_material.link %>
+</p>
+
+<%= link_to 'Edit', edit_teaching_material_path(@teaching_material) %> |
+<%= link_to 'Back', teaching_materials_path %>
