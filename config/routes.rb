@@ -12,13 +12,19 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   
+  # lectures
+  match '/lectures/new/:course_id', to: 'lectures#new', via: 'get'
   
+  # teams
   #match '/teambuilding', to: 'teams#pickup', via: 'get'
   #match '/teamreset', to: 'teams#reset', via: 'get'
-  
-  match '/signup', to: 'users#new', via: 'get'
+
+  # sessions
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  
+  # users
+  match '/signup', to: 'users#new', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

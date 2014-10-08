@@ -15,7 +15,7 @@ class LecturesController < ApplicationController
 
   # GET /lectures/new
   def new
-    @lecture = Lecture.new
+    @lecture = Lecture.new(course_id: params[:course_id], instructor: current_user.id)
   end
 
   # GET /lectures/1/edit
@@ -70,6 +70,8 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:name, :start_date, :end_date, :instructor)
+      params.require(:lecture).permit(:name, :description, :image,
+                                      :start_date, :end_date,
+                                      :course_id, :instructor)
     end
 end

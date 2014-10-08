@@ -96,12 +96,24 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Lectures */
+.lectures {
+  .description {
+    @include truncated(5);
+  }
+}
+
 /* Courses */
 #courses {
-  .caption {
+  .thumbnail {
+    img {
+      height: 200px;
+    }
+    .caption {
     .description {
       @include truncated(7);
     }
+  }
   }
 }
 

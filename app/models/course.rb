@@ -1,5 +1,8 @@
 class Course < ActiveRecord::Base
   
+  # association
+  has_many :lectures
+  
   # name validation
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false }

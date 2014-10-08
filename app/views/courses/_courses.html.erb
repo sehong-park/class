@@ -1,6 +1,8 @@
 <h1><%= t('course.list') %></h1>
 <div class="row" id="courses">
   <% courses.each do |course| %>
-    <%= render 'courses/course', {course: course} %>
+    <div class="col-sm-4">
+      <%= render 'courses/course', {course: course} %>
+    </div>
   <% end %>
 </div> <!-- courses -->

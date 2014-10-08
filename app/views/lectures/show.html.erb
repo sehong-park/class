@@ -1,24 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @lecture.name) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @lecture.name %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Start date:</strong>
-  <%= @lecture.start_date %>
-</p>
+  <!-- aside -->
+  <aside>
+    <div class="col-sm-4 col-lg-3">
+      <%= render 'lectures/lecture', {lecture: @lecture} %>
+    </div>
+  </aside>
 
-<p>
-  <strong>End date:</strong>
-  <%= @lecture.end_date %>
-</p>
+  <!-- content -->
+  <div class="col-sm-8 col-lg-9">
+    <!-- render 'lessons/lessons', {lessons: @lessons} -->
+  </div>
 
-<p>
-  <strong>Instructor:</strong>
-  <%= @lecture.instructor %>
-</p>
-
-<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
-<%= link_to 'Back', lectures_path %>
+</div>

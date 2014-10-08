@@ -126,6 +126,7 @@ ko:
     desc: "창의공학"
     school: "학교"
     group: "그룹"
+    lecture: "강의"
     course: "학습"
     team: "팀"
     user: "회원"
@@ -138,6 +139,9 @@ ko:
     phone: "010-2006-8610"
     edit: "수정"
     destroy: "삭제"
+    
+  form:
+    submit: "작성완료"
 
   # course
   course:
@@ -147,7 +151,15 @@ ko:
     placeholder:
       name: '학습 주제를 입력하세요 ex) Arduino'
       description: '120 자 내외의 간단한 설명을 적어주세요'
-    submit: '작성완료'
+    
+    
+  #lecture
+  lecture:
+    list: "강의 목록"
+    new: "강의 만들기"
+    placeholder:
+      name: "강의명을 입력하세요 ex) 기초공학설계"
+      description: '120 자 내외의 간단한 설명을 적어주세요'
     
   # user
   user:
@@ -168,7 +180,7 @@ ko:
     password_placeholder: "비밀번호"
     password_confirm: "비밀번호 확인"
     password_confirm_placeholder: "비밀번호 재입력"
-    submit: "작성완료"
+
     created: "회원가입을 축하드립니다"
     updated: "회원정보가 수정되었습니다"
     do_signup: "가입하기"
@@ -189,6 +201,7 @@ ko:
     models: 
       user: "회원"
       course: "학습"
+      lecture: "강좌"
     attributes:
       user:
         name: "이름"
@@ -201,6 +214,12 @@ ko:
         name: "이름"
         description: "설명"
         image: "이미지"
+      lecture:
+        name: "이름"
+        description: "설명"
+        image: "이미지"
+        start_date: "시작일"
+        end_date: "종료일"
     errors:
       models:
         user:
@@ -234,3 +253,10 @@ ko:
         lecture:
           attributes:
             name:
+              blank: "강의명을 입력해주세요"
+            description:
+              blank: "강의에 대한 설명을 입력해주세요"
+              too_long: "250자 미만으로 적어주세요"
+            image:
+              blank: "이미지 파일을 선택해주세요"
+              in_between: "100KB 이하의 파일을 올려주세요"

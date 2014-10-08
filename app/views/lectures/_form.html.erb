@@ -1,33 +1,44 @@
 <%= form_for(@lecture) do |f| %>
-  <% if @lecture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@lecture.errors.count, "error") %> prohibited this lecture from being saved:</h2>
 
-      <ul>
-      <% @lecture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="form-group <%= bs_validation(:name, @lecture) %>">
+  <%= f.label(:name, t('activerecord.attributes.lecture.name')) %>
+  <%= f.text_field(:name, class: "form-control input-lg", placeholder: t('lecture.placeholder.name')) %>
+  <%= bs_validation_icon(:name, @lecture) %>
+  <%= bs_validation_message(:name, @lecture.errors) %>
+</div>
+
+<div class="form-group <%= bs_validation(:description, @lecture) %>">
+  <%= f.label(:description, t('activerecord.attributes.lecture.description')) %>
+  <%= f.text_area(:description, rows: 3, class: "form-control input-lg", placeholder: t('lecture.placeholder.description')) %>
+  <%= bs_validation_icon(:description, @lecture) %>
+  <%= bs_validation_message(:description, @lecture.errors) %>
+</div>
+
+<div class="form-group <%= bs_validation(:image, @lecture) %>">
+  <%= f.label(:image, t('activerecord.attributes.lecture.image')) %>
+  <%= f.file_field :image %>
+  <% unless @lecture.image.url.include?(Lecture::DEFAULT_IMAGE) %>
+  <%= image_tag(@lecture.image.url, alt: @lecture.name) %>
   <% end %>
+  <%= bs_validation_icon(:image, @lecture) %>
+  <%= bs_validation_message(:image, @lecture.errors) %>
+</div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :instructor %><br>
-    <%= f.number_field :instructor %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="form-group <%= bs_validation(:start_date, @lecture) %>">
+  <%= f.label :start_date %><br>
+  <%= f.date_select :start_date %>
+</div>
+<div class="form-group <%= bs_validation(:end_date, @lecture) %>">
+  <%= f.label :end_date %><br>
+  <%= f.date_select :end_date %>
+</div>
+
+<div class="field">
+  <%= f.hidden_field(:course_id) %>
+  <%= f.hidden_field(:instructor) %>
+</div>
+
+<div class="actions">
+  <%= f.submit t('form.submit'), class: "btn btn-lg btn-form-control btn-primary" %>
+</div>
 <% end %>
