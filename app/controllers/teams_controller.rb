@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :admin_user, except: [:index, :show]
+  before_action :admin_user, except: [:index]
   
   def index
     @users = User.where({team_id: nil, admin: false})
