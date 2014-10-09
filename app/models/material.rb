@@ -1,4 +1,4 @@
-class TeachingMaterial < ActiveRecord::Base
+class Material < ActiveRecord::Base
   
   # name validation
   validates :name, presence: true,

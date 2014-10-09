@@ -126,7 +126,7 @@ ko:
     desc: "창의공학"
     school: "학교"
     group: "그룹"
-    teaching_material: "교재"
+    material: "교재"
     lecture: "강의"
     course: "학습"
     team: "팀"
@@ -148,7 +148,7 @@ ko:
       description: "%{model}에 대한 간단한 설명을 적어주세요"
       link: "%{model}에 대해 참고 할 수 있는 url 링크를 남겨주세요"
   
-  teaching_material:
+  material:
     list: "교재 목록"
     
   
@@ -210,9 +210,9 @@ ko:
       user: "회원"
       course: "학습"
       lecture: "강좌"
-      teaching_material: "교재"
+      material: "교재"
     attributes:
-      teaching_material:
+      material:
         name: "교재명"
         description: "설명"
         link: "링크"
@@ -276,7 +276,7 @@ ko:
             image:
               blank: "이미지 파일을 선택해주세요"
               in_between: "100KB 이하의 파일을 올려주세요"
-        teaching_material:
+        material:
           attributes:
             name:
               blank: "강의명을 입력해주세요"

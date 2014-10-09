@@ -1,7 +1,0 @@
-<% provide(:title, t('app.teaching_material')) %>
-
-<%= render 'teaching_materials/teaching_materials', { teaching_materials: @teaching_materials } %>
-
-<% if admin_user? %>
-  <%= link_to 'New Teaching Material', new_teaching_material_path %>
-<% end %>

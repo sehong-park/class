@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008182532) do
+ActiveRecord::Schema.define(version: 20141009110956) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20141008182532) do
   end
 
   add_index "lectures", ["course_id"], name: "index_lectures_on_course_id"
+
+  create_table "materials", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "link"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "materials", ["created_at"], name: "index_materials_on_created_at"
 
   create_table "organizations", force: true do |t|
     t.string   "name"

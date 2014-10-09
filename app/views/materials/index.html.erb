@@ -1,0 +1,7 @@
+<% provide(:title, t('app.material')) %>
+
+<%= render 'materials/materials', { materials: @materials } %>
+
+<% if admin_user? %>
+  <%= link_to 'New Material', new_material_path %>
+<% end %>
