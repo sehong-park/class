@@ -72,6 +72,6 @@ class LecturesController < ApplicationController
     def lecture_params
       params.require(:lecture).permit(:name, :description, :level,
                                       :image, :start_date, :end_date,
-                                      :course_id, :instructor)
+                                      :course_id, :instructor, :material_ids => [])
     end
 end
