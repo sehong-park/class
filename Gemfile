@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# cheditor_rails
+gem 'ckeditor_rails'
+
 # paperclip for image upload
 gem "paperclip", "~> 4.2"
 
