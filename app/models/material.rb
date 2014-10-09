@@ -1,5 +1,11 @@
 class Material < ActiveRecord::Base
   
+  # DEFAULT_SCOPE
+  default_scope -> { order('created_at DESC') }
+  
+  # association
+  has_and_belongs_to_many :lectures
+  
   # name validation
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false }

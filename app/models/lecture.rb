@@ -1,7 +1,11 @@
 class Lecture < ActiveRecord::Base
+  
+  # DEFAULT_SCOPE
+  default_scope -> { order('created_at DESC') }
 
   # association
   belongs_to :course
+  has_and_belongs_to_many :materials
   
   # name validation
   validates :name, presence: true,

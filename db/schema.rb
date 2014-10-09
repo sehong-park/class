@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009110956) do
+ActiveRecord::Schema.define(version: 20141009120618) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141009110956) do
     t.datetime "image_updated_at"
   end
 
+  add_index "courses", ["created_at"], name: "index_courses_on_created_at"
   add_index "courses", ["name"], name: "index_courses_on_name", unique: true
 
   create_table "lectures", force: true do |t|
@@ -43,6 +44,14 @@ ActiveRecord::Schema.define(version: 20141009110956) do
   end
 
   add_index "lectures", ["course_id"], name: "index_lectures_on_course_id"
+  add_index "lectures", ["name", "instructor", "level", "created_at"], name: "index_lectures_on_name_and_instructor_and_level_and_created_at"
+
+  create_table "lectures_materials", force: true do |t|
+    t.integer "lecture_id"
+    t.integer "material_id"
+  end
+
+  add_index "lectures_materials", ["lecture_id", "material_id"], name: "index_lectures_materials_on_lecture_id_and_material_id"
 
   create_table "materials", force: true do |t|
     t.string   "name"
@@ -57,6 +66,7 @@ ActiveRecord::Schema.define(version: 20141009110956) do
   end
 
   add_index "materials", ["created_at"], name: "index_materials_on_created_at"
+  add_index "materials", ["name"], name: "index_materials_on_name"
 
   create_table "organizations", force: true do |t|
     t.string   "name"
@@ -64,6 +74,8 @@ ActiveRecord::Schema.define(version: 20141009110956) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "organizations", ["name", "created_at"], name: "index_organizations_on_name_and_created_at"
 
   create_table "teaching_materials", force: true do |t|
     t.string   "name"
@@ -100,6 +112,7 @@ ActiveRecord::Schema.define(version: 20141009110956) do
     t.datetime "avatar_updated_at"
   end
 
+  add_index "users", ["created_at", "updated_at"], name: "index_users_on_created_at_and_updated_at"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
   add_index "users", ["std_num"], name: "index_users_on_std_num", unique: true
