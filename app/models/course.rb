@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
   
   # DEFAULT_SCOPE
-  default_scope -> { order('created_at DESC') }
+  default_scope -> { order('created_at ASC') }
   
   # association
   has_many :lectures
