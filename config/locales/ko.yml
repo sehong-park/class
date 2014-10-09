@@ -20,7 +20,7 @@ ko:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%y/%m/%d %H:%M"
-      long: "%Y년 %B월 %d일, %H시 %M분 %S초 %Z"
+      long: "%Y-%m-%d, %H:%M %S'"
     am: "오전"
     pm: "오후"
     
@@ -120,6 +120,14 @@ ko:
       two_words_connector: "과 "
       last_word_connector: ", "
 
+  # admin
+  admin:
+    home:
+      name: "사용자 모드"
+    actions:
+      dashboard:
+        menu: "관리자 모드"
+  
   # application
   app:
     title: "기초공학설계"

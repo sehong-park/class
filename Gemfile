@@ -1,5 +1,17 @@
 source 'https://rubygems.org'
 
+# Handle authentication with Devise for Rails Admin
+gem "devise"
+
+# Rails Admin is fully compatible with CanCan, an authorization framework to limit which actions a user can perform on each model.
+gem "cancan"
+
+# PaperTrail
+gem "paper_trail"
+
+# Use rails_admin for out of box admin interface
+gem "rails_admin"
+
 # paperclip for image upload
 gem "paperclip", "~> 4.2"
 

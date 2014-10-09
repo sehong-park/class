@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009120618) do
+ActiveRecord::Schema.define(version: 20141009143627) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -117,5 +117,16 @@ ActiveRecord::Schema.define(version: 20141009120618) do
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
   add_index "users", ["std_num"], name: "index_users_on_std_num", unique: true
   add_index "users", ["team_id"], name: "index_users_on_team_id"
+
+  create_table "versions", force: true do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
 
 end
