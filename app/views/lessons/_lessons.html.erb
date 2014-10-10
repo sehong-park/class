@@ -1,0 +1,39 @@
+<!-- lessons -->
+<section id="lessons">
+
+  <!-- panel -->
+  <div class="panel panel-default">
+
+    <!-- panel-heading -->
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t 'lesson.list' %></h3>
+    </div> <!-- panel-heading -->
+
+    <!-- panel-body -->
+    <div class="panel-body">
+
+      <!-- media list -->
+      <ul class="media-list">
+        <% lessons.each do | lesson | %>
+        <li class="media lessons">
+          <a class="pull-left" href="<%= lesson_path(lesson) %>">
+            <%= image_tag(lesson.image.url(:medium), alt: lesson.title) %>
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><%= link_to lesson.title, lesson_path(lesson) %></h4>
+            <p class="description"><%= lesson.description %></p>
+          </div>
+        </li>
+        <% end %>
+      </ul> <!-- media list -->
+    </div> <!-- panel-body -->
+
+    <!-- panel-footer -->
+    <div class="panel-footer">
+      <% if admin_user? %>
+      <%= link_to t('lesson.new'), "/lessons/new/#{@lecture.id}" %>
+      <% end %>
+    </div> <!-- panel-footer -->
+
+  </div><!-- panel -->
+</section> <!-- lessons -->

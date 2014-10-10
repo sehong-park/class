@@ -5,6 +5,7 @@ class Lecture < ActiveRecord::Base
 
   # association
   belongs_to :course
+  has_many :lessons
   has_and_belongs_to_many :materials
   
   # name validation

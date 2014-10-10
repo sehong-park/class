@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :lessons
+
   resources :materials
 
   resources :organizations
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
   resources :teams
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  
+  # lessons
+  match '/lessons/new/:lecture_id', to: 'lessons#new', via: 'get'
   
   # lectures
   match '/lectures/new/:course_id', to: 'lectures#new', via: 'get'
