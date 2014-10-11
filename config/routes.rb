@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'uploader/upload'
+
   resources :lessons
 
   resources :materials
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
   resources :teams
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  
+  # uploader
+  match '/ckeditor/pictures', to: 'ckeditor#pictures', via: 'post'
   
   # lessons
   match '/lessons/new/:lecture_id', to: 'lessons#new', via: 'get'

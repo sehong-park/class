@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010174605) do
+ActiveRecord::Schema.define(version: 20141011160554) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -92,18 +92,6 @@ ActiveRecord::Schema.define(version: 20141010174605) do
   end
 
   add_index "organizations", ["name", "created_at"], name: "index_organizations_on_name_and_created_at"
-
-  create_table "teaching_materials", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
 
   create_table "teams", force: true do |t|
     t.string   "name"
