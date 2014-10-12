@@ -127,8 +127,8 @@ ko:
       upload: "업로드 하기"
   # application
   app:
-    title: "기초공학설계"
-    desc: "창의공학"
+    title: "창의공학"
+    desc: "Creative Engineering"
     school: "학교"
     group: "그룹"
     material: "교재"
