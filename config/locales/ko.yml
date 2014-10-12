@@ -120,6 +120,11 @@ ko:
       two_words_connector: "과 "
       last_word_connector: ", "
 
+  # ckeditor
+  ckeditor:
+    confirm_delete: '정말 삭제하시겠습니까?'
+    buttons:
+      upload: "업로드 하기"
   # application
   app:
     title: "기초공학설계"
