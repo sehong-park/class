@@ -29,7 +29,7 @@
 
 <div class="form-group <%= bs_validation(:body, @lesson) %>">
   <%= f.label(:body, t('activerecord.attributes.lesson.body')) %>
-  <%= f.text_area(:body, class: "form-control input-lg ckeditor", placeholder: t('form.placeholder.body', model: t('activerecord.models.lesson'))) %>
+  <%= f.cktext_area(:body, class: "form-control input-lg", :ckeditor => {:language => 'ko'}, placeholder: t('form.placeholder.body', model: t('activerecord.models.lesson'))) %>
   <%= bs_validation_icon(:body, @lesson) %>
   <%= bs_validation_message(:body, @lesson.errors) %>
 </div>
