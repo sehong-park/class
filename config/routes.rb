@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   
+  # /ckeditor/pictures only for admin
+  #match '/ckeditor/pictures', to: 'welcome#admin', via: 'get'
+  
   # lessons
   match '/lessons/new/:lecture_id', to: 'lessons#new', via: 'get'
   
