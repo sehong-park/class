@@ -5,12 +5,13 @@
   <!-- aside -->
   <aside>
     <div class="col-md-4 col-lg-3">
-      <%= render 'lectures/lecture', {lecture: @lecture} %>
+      <%= render 'courses/course', {course: @course} %>
     </div>
   </aside>
 
   <!-- content -->
   <div class="col-md-8 col-lg-9">
+    <%= render 'lectures/lecture', {lecture: @lecture} %>
     <%= render 'lessons/lessons', {lessons: @lessons} %>
   </div>
 

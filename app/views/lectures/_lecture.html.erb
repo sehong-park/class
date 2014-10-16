@@ -1,21 +1,23 @@
 <!-- lecture-#id -->
 <section id="lecture-<%= lecture.id %>">
-  <div class="thumbnail">
-    <%= image_tag(lecture.image.url(:medium), alt: lecture.name) %>
-    <div class="caption">
-      <h3 class="name"><%= link_to lecture.name, lecture %></h3>
-      <p class="level text-muted">
-        <%= t('activerecord.attributes.lecture.level') %> :
-        <%= t('activerecord.attributes.lecture.levels').at(lecture.level).at(0) %>
-      </p>
-      <p class="description"><%= lecture.description %></p>
-      <% if admin_user? %>
-      <p>
-        <%= link_to t('app.edit'), edit_lecture_path(lecture), class: 'btn btn-sm btn-primary' %>
-        <%= link_to t('app.destroy'), lecture, method: :delete,
-data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
-      </p>
-      <% end %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t 'app.lecture' %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="media lectures">
+        <a class="pull-left" href="<%= lecture_path(lecture) %>">
+          <%= image_tag(lecture.image.url(:medium), alt: lecture.name) %>
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to lecture.name, lecture_path(lecture) %></h4>
+          <p class="level text-muted">
+            <%= t('activerecord.attributes.lecture.level') %> :
+            <%= t('activerecord.attributes.lecture.levels').at(lecture.level).at(0) %>
+          </p>
+          <p class="description"><%= lecture.description %></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
