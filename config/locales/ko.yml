@@ -127,8 +127,8 @@ ko:
       upload: "업로드 하기"
   # application
   app:
-    title: "창의공학"
-    desc: "Creative Engineering"
+    title: "Cloud Studying"
+    desc: "클라우드 스터딩"
     school: "학교"
     group: "그룹"
     material: "교재"
@@ -136,7 +136,7 @@ ko:
     course: "학습"
     team: "팀"
     user: "회원"
-    campany: "두드림"
+    campany: "클라우드 스터딩"
     policy: "정책"
     terms_of_service: "이용약관"
     privacy: "개인정보"
