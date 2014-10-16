@@ -1,0 +1,19 @@
+<article>
+  <div class="practice" id="practice-<%= practice.id %>">
+    <div class="row">
+      <div class="col-md-9">
+        <p><%= practice.question %></p>
+      </div>
+      <div class="col-md-3">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <%= t 'practice.check' %>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+      </div>                                  
+    </div>
+  </div>
+</article>

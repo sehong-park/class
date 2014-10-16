@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012161514) do
+ActiveRecord::Schema.define(version: 20141016110915) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -108,6 +108,20 @@ ActiveRecord::Schema.define(version: 20141012161514) do
   end
 
   add_index "organizations", ["name", "created_at"], name: "index_organizations_on_name_and_created_at"
+
+  create_table "practices", force: true do |t|
+    t.integer  "lesson_id"
+    t.string   "right_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "question"
+  end
+
+  add_index "practices", ["lesson_id", "created_at"], name: "index_practices_on_lesson_id_and_created_at"
 
   create_table "teams", force: true do |t|
     t.string   "name"

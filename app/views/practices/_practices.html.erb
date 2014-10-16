@@ -1,0 +1,25 @@
+<!-- practices -->
+<section id="practices">
+  
+  <!-- panel -->
+  <div class="panel panel-default">
+
+    <!-- panel-heading -->
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t 'practice.list' %></h3>
+    </div> <!-- panel-heading -->
+
+    <!-- panel-body -->
+    <div class="panel-body">
+      <% @practices.each do | practice | %>
+        <%= render 'practices/practice', { practice: practice } %>
+      <% end %>
+    </div> <!-- panel-body -->
+
+    <!-- panel-footer -->
+    <div class="panel-footer">
+      <%= link_to t('practice.new'), "/practices/new/#{@lesson.id}" %>
+    </div> <!-- panel-footer -->
+    
+  </div> <!-- panel -->
+</section> <!-- practices -->

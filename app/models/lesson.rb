@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
   belongs_to :lecture
+  has_many :practices
   
   # DEFAULT_SCOPE
   default_scope -> { order('created_at DESC') }
@@ -12,7 +13,7 @@ class Lesson < ActiveRecord::Base
   
   # body validation
   validates :body, presence: true,
-                   length: { maximum: 65536 }
+                   length: { maximum: 20000 }
   
   # image validation
   DEFAULT_IMAGE = "dummy/160x160.png"
@@ -21,6 +22,6 @@ class Lesson < ActiveRecord::Base
   
   validates_attachment :image, presence: true,
                                content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
-                               size: { :in => 0..100.kilobytes }
+                               size: { :in => 0..300.kilobytes }
   
 end

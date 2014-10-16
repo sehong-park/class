@@ -13,6 +13,8 @@ class LessonsController < ApplicationController
   def show
     @lecture = @lesson.lecture
     @course = @lecture.course
+    @practices = Practice.where(lesson_id: @lesson.id)
+    @practice= Practice.new(lesson_id: @lesson.id)
   end
 
   # GET /lessons/new
