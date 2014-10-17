@@ -129,9 +129,10 @@ ko:
   app:
     title: "Cloud Studying"
     desc: "클라우드 스터딩"
+    feedback: "피드백"
     school: "학교"
     group: "그룹"
-    practice: "연습문제"
+    practice: "문제"
     material: "교재"
     lecture: "강의"
     course: "학습"
@@ -157,10 +158,11 @@ ko:
       body: "%{model}에 대한 내용을 적어주세요"
       question: "%{model}에 질문을 만들어 주세요"
       right_answer: "%{model}에 정답을 입력해 주세요"
+      example_answer: "객관식 보기를 입력해주세요"
   
   practice:
     list: "연습문제"
-    new: "연습문제 만들기"
+    new: "문제 만들기"
     check: "정답확인"
   material:
     list: "교재 목록"
@@ -230,12 +232,13 @@ ko:
       lecture: "강좌"
       lesson: "수업"
       material: "교재"
-      practice: "연습문제"
+      practice: "문제"
     attributes:
       practice:
-        question: "질문"
+        question: "문제"
         right_answer: "정답"
         image: "이미지"
+        example_answer: "보기"
       lesson:
         title: "제목"
         description: "개요"

@@ -1,6 +1,6 @@
 class PracticesController < ApplicationController
   before_action :set_practice, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user, except: [:show]
+  before_action :admin_user
   
   # GET /practices
   # GET /practices.json
@@ -43,7 +43,7 @@ class PracticesController < ApplicationController
   def update
     respond_to do |format|
       if @practice.update(practice_params)
-        format.html { redirect_to @practice, notice: 'Practice was successfully updated.' }
+        format.html { redirect_to @practice.lesson, notice: 'Practice was successfully updated.' }
         format.json { render :show, status: :ok, location: @practice }
       else
         format.html { render :edit }

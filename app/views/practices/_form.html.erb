@@ -1,34 +1,60 @@
-<%= form_for(@practice) do |f| %>
+<div class="row">
+  <%= form_for(@practice) do |f| %>
 
-<div class="form-group <%= bs_validation(:question, @practice) %>">
-  <%= f.label(:question, t('activerecord.attributes.practice.question')) %>
-  <%= f.text_area(:question, rows: 3, class: "form-control input-lg", placeholder: t('form.placeholder.question', model: t('activerecord.models.practice'))) %>
-  <%= bs_validation_icon(:question, @practice) %>
-  <%= bs_validation_message(:question, @practice.errors) %>
-</div>
+  <div class="col-md-8">
 
-<div class="form-group <%= bs_validation(:right_answer, @practice) %>">
-  <%= f.label(:right_answer, t('activerecord.attributes.practice.right_answer')) %>
-  <%= f.text_field(:right_answer, class: "form-control input-lg", placeholder: t('form.placeholder.right_answer', model: t('activerecord.models.practice'))) %>
-  <%= bs_validation_icon(:right_answer, @practice) %>
-  <%= bs_validation_message(:right_answer, @practice.errors) %>
-</div>
+    <!-- question -->
+    <div class="form-group <%= bs_validation(:question, @practice) %>">
+      <%= f.label(:question, t('activerecord.attributes.practice.question')) %>
+      <%= f.text_area(:question, rows: 2, class: "form-control", placeholder: t('form.placeholder.question', model: t('activerecord.models.practice'))) %>
+      <%= bs_validation_icon(:question, @practice) %>
+      <%= bs_validation_message(:question, @practice.errors) %>
+    </div> <!-- question -->
 
-<div class="form-group <%= bs_validation(:image, @practice) %>">
-  <%= f.label(:image, t('activerecord.attributes.practice.image')) %>
-  <%= f.file_field :image %>
-  <% unless @practice.image.url.include?(Practice::DEFAULT_IMAGE) %>
-  <%= image_tag(@practice.image.url, alt: @practice.name) %>
+    <!-- image -->
+    <div class="form-group <%= bs_validation(:image, @practice) %>">
+      <%= f.label(:image, t('activerecord.attributes.practice.image')) %>
+      <%= f.file_field :image %>
+      <% unless @practice.image.url.include?(Practice::DEFAULT_IMAGE) %>
+      <%= image_tag(@practice.image.url, alt: @practice.name) %>
+      <% end %>
+      <%= bs_validation_icon(:image, @practice) %>
+      <%= bs_validation_message(:image, @practice.errors) %>
+    </div><!-- image -->
+
+    <!-- example_answers -->
+    <div class="form-group">
+      <!-- label_tag(:example_answer, t('activerecord.attributes.practice.example_answer')) %>
+      <div><p>있다</p> <p>없다</p> <p>모르겠다</p></div> -->
+      <!-- input-group -->
+<!--      <div class="input-group">
+        <-- text_field_tag(:example_answer, nil, class: "form-control", placeholder: t('form.placeholder.example_answer')) %>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button"><%= bs_icon("plus") %></button>
+        </span>
+      </div> <!-- input-group -->
+    </div> <!-- example_answers --> 
+
+  </div>
+
+  <div class="col-md-4">
+    <!-- right_answer -->
+    <div class="form-group <%= bs_validation(:right_answer, @practice) %>">
+      <%= f.label(:right_answer, t('activerecord.attributes.practice.right_answer')) %>
+      <%= f.text_field(:right_answer, class: "form-control", placeholder: t('form.placeholder.right_answer', model: t('activerecord.models.practice'))) %>
+      <%= bs_validation_icon(:right_answer, @practice) %>
+      <%= bs_validation_message(:right_answer, @practice.errors) %>
+    </div> <!-- right_answer -->
+
+    <!-- subnmit -->
+    <div class="actions">
+      <%= f.submit t('form.submit'), class: "btn btn-form-control btn-primary" %>
+    </div> <!-- subnmit -->
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field(:lesson_id) %>
+  </div>
+
   <% end %>
-  <%= bs_validation_icon(:image, @practice) %>
-  <%= bs_validation_message(:image, @practice.errors) %>
 </div>
-
-<div class="field">
-  <%= f.hidden_field(:lesson_id) %>
-</div>
-
-<div class="actions">
-  <%= f.submit t('form.submit'), class: "btn btn-lg btn-form-control btn-primary" %>
-</div>
-<% end %>

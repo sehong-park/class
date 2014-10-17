@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :example_answers
+
   resources :practices
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -22,6 +24,9 @@ Rails.application.routes.draw do
   
   # /ckeditor/pictures only for admin
   #match '/ckeditor/pictures', to: 'welcome#admin', via: 'get'
+  
+  # feedback
+  match '/feedback', to: 'welcome#feedback', via: 'get'
   
   # practices
   match '/practices/new/:lesson_id', to: 'practices#new', via: 'get'

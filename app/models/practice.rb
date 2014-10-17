@@ -2,6 +2,7 @@ class Practice < ActiveRecord::Base
   
   # associatioins
   belongs_to :lesson
+  has_many :example_answers, dependent: :destroy
   
   # DEFAULT_SCOPE
   default_scope -> { order('created_at ASC') }
@@ -13,7 +14,7 @@ class Practice < ActiveRecord::Base
   
   # image validation
   DEFAULT_IMAGE = "dummy/160x160.png"
-  has_attached_file :image, styles: { medium: "160x160#", thumb: "80x80#" },
+  has_attached_file :image, styles: { medium: "200x200#", thumb: "100x100#" },
                             default_url: DEFAULT_IMAGE
   
   validates_attachment :image, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },

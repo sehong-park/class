@@ -109,6 +109,15 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* practices */
+.practice {
+  padding-bottom: 16px;
+  border-bottom: solid 1px $gray-lighter;
+  margin-bottom: 20px;
+  .right_answer {
+    color: $gray-lighter;
+  }
+}
 
 /* Lectures */
 .lectures {

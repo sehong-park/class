@@ -1,18 +1,33 @@
 <article>
-  <div class="practice" id="practice-<%= practice.id %>">
+  <div class="practice" id="#practice-<%= practice.id %>">
     <div class="row">
       <div class="col-md-9">
-        <p><%= practice.question %></p>
+        <div class="form-group">
+          <label for="practiceQuestion"><%= t 'practice.question' %></label>
+          <p>
+            <%= practice.question %>
+            <% if admin_user? %>
+            <%= link_to t('app.edit'), edit_practice_path(practice), class: 'btn btn-sm btn-primary' %>
+            <%= link_to t('app.destroy'), practice, method: :delete,
+data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+            <% end %>
+          </p>
+        </div>
+        <% unless practice.image.url.include?(Practice::DEFAULT_IMAGE) %>
+        <%= image_tag(practice.image.url, alt: "#{practice.lesson.title}-#{t('app.practice')}-#{practice.id}") %>
+        <% end %>
       </div>
+
       <div class="col-md-3">
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <%= t 'practice.check' %>
-            </button>
-          </span>
-        </div><!-- /input-group -->
+        <div class="form-group">
+          <label for="practiceCheck"><%= t 'practice.check' %></label>
+          <div class="input-group">
+            <input type="text" id="right-answer" class="form-control right_answer" value="<%= practice.right_answer %>">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">확인</button>
+            </span>
+          </div>
+        </div>
       </div>                                  
     </div>
   </div>
