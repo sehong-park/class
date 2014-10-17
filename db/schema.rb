@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017074156) do
+ActiveRecord::Schema.define(version: 20141017132052) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -44,10 +44,8 @@ ActiveRecord::Schema.define(version: 20141017074156) do
   add_index "courses", ["name"], name: "index_courses_on_name", unique: true
 
   create_table "example_answers", force: true do |t|
-    t.string   "example_answer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "practice_id"
+    t.string  "example_answer"
+    t.integer "practice_id"
   end
 
   add_index "example_answers", ["practice_id"], name: "index_example_answers_on_practice_id"
