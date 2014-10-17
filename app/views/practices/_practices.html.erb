@@ -17,9 +17,10 @@
     </div> <!-- panel-body -->
 
     <!-- panel-footer -->
-    <div class="panel-footer">
-      <%= render 'practices/form' %>
-    </div> <!-- panel-footer -->
-    
+    <% if admin_user? %>
+      <div class="panel-footer">
+        <%= render 'practices/form' %>
+      </div> <!-- panel-footer -->
+    <% end %>
   </div> <!-- panel -->
 </section> <!-- practices -->
