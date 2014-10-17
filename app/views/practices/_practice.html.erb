@@ -22,9 +22,9 @@ data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
         <div class="form-group">
           <label for="practiceCheck"><%= t 'practice.check' %></label>
           <div class="input-group">
-            <input type="text" id="right-answer" class="form-control right_answer" value="<%= practice.right_answer %>">
+            <input type="text" id="right-answer-<%= practice.id %>" class="form-control right_answer" value="<%= practice.right_answer %>" disabled>
             <span class="input-group-btn">
-              <button class="btn btn-primary" type="button">확인</button>
+              <button class="btn btn-primary check-btn" type="button" data-target="#right-answer-<%= practice.id %>">확인</button>
             </span>
           </div>
         </div>
