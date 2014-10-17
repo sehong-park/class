@@ -16,7 +16,7 @@
       <%= f.label(:image, t('activerecord.attributes.practice.image')) %>
       <%= f.file_field :image %>
       <% unless @practice.image.url.include?(Practice::DEFAULT_IMAGE) %>
-      <%= image_tag(@practice.image.url, alt: @practice.name) %>
+      <%= image_tag(@practice.image.url, alt: @practice.question) %>
       <% end %>
       <%= bs_validation_icon(:image, @practice) %>
       <%= bs_validation_message(:image, @practice.errors) %>
