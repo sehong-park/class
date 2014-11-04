@@ -18,5 +18,5 @@ class Practice < ActiveRecord::Base
                             default_url: DEFAULT_IMAGE
   
   validates_attachment :image, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
-                               size: { :in => 0..300.kilobytes }
+                               size: { :in => 0..4.megabytes }
 end
